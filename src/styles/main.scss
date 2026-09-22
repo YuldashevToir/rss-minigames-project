@@ -1,0 +1,16 @@
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $color-bg;
+  color: $color-on-bg;
+  font-family: $font-primary;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
