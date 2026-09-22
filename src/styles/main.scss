@@ -1,0 +1,16 @@
+@use './abstracts/variables' as vars;
+@use './abstracts/mixins' as mix;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: vars.$color-bg;
+  color: vars.$color-on-bg;
+  font-family: vars.$font-primary;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
