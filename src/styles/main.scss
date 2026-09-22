@@ -1,5 +1,5 @@
-@import './abstracts/variables';
-@import './abstracts/mixins';
+@use './abstracts/variables' as vars;
+@use './abstracts/mixins' as mix;
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -8,9 +8,9 @@
 }
 
 body {
-  background-color: $color-bg;
-  color: $color-on-bg;
-  font-family: $font-primary;
+  background-color: vars.$color-bg;
+  color: vars.$color-on-bg;
+  font-family: vars.$font-primary;
   min-height: 100vh;
   overflow-x: hidden;
 }

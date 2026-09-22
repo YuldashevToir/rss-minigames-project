@@ -3,11 +3,8 @@ import tsPlugin from '@typescript-eslint/eslint-plugin';
 import unicornPlugin from 'eslint-plugin-unicorn';
 
 export default [
-  // 1. Activate the official Unicorn recommended guidelines baseline
-  unicornPlugin.configs['flat/recommended'],
-  
-  // 2. Lay down your strict RS School project specific quality rules
   {
+    // Restrict linter passes strictly to pure TypeScript source assets
     files: ['src/**/*.ts'],
     languageOptions: {
       parser: tsParser,
@@ -17,18 +14,18 @@ export default [
       },
     },
     linterOptions: {
-      noInlineConfig: true, // Absolute ban on inline lint changes inside source files
+      noInlineConfig: true,
     },
     plugins: {
       '@typescript-eslint': tsPlugin,
+      'unicorn': unicornPlugin,
     },
     rules: {
-      '@typescript-eslint/no-explicit-any': 'error', // 0 explicit any types allowed
-      'no-console': 'error',                         // 0 console.log production statements allowed
-      
-      // Fine-tune Unicorn rules for development convenience and crash prevention
-      'unicorn/prevent-abbreviations': 'off',       // Allowed for common development folder shortcodes
-      'unicorn/expiring-todo-comments': 'off',      // Deactivated to bypass version compatibility error with ESLint v9
+      '@typescript-eslint/no-explicit-any': 'error',
+      'no-console': 'error',
+      'unicorn/prevent-abbreviations': 'off',
+      'unicorn/expiring-todo-comments': 'off',
+      'unicorn/prefer-dom-node-append': 'error'
     },
   }
 ];

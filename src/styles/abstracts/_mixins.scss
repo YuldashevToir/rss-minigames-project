@@ -1,16 +1,16 @@
-@import './variables';
+@use './variables' as vars;
 
 @mixin respond-to($breakpoint) {
   @if $breakpoint == 'mobile' {
-    @media (min-width: $breakpoint-mobile) { @content; }
+    @media (min-width: vars.$breakpoint-mobile) { @content; }
   } @else if $breakpoint == 'tablet' {
-    @media (min-width: $breakpoint-tablet) { @content; }
+    @media (min-width: vars.$breakpoint-tablet) { @content; }
   } @else if $breakpoint == 'desktop' {
-    @media (min-width: $breakpoint-desktop) { @content; }
+    @media (min-width: vars.$breakpoint-desktop) { @content; }
   }
 }
 
-@mixin text-style($size, $weight, $family: $font-primary) {
+@mixin text-style($size, $weight, $family: vars.$font-primary) {
   font-size: $size;
   font-weight: $weight;
   font-family: $family;
