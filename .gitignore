@@ -1,0 +1,14 @@
+# Node ecosystem dependency distributions
+node_modules/
+npm-debug.log*
+
+# Production compiler distribution build outputs
+dist/
+
+# Development editor caching profiles
+.vscode/
+.idea/
+*.suo
+
+# Local automated environment test lint caches
+.eslintcache
